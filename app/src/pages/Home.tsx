@@ -49,7 +49,7 @@ function Home({ }: Props) {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-dvh bg-gray-100 pt-20">
+    <div className="flex flex-col items-center min-h-dvh bg-gray-100 pt-10 lg:pt-20">
       <Logo />
       <div className="flex flex-col mt-10 w-96">
         <input
