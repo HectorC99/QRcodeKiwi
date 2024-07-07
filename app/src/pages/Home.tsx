@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Logo from '../components/Logo';
 import Modal from '../components/Modal';
 import QRCode from 'qrcode.react';
@@ -14,6 +14,24 @@ function Home({ }: Props) {
   const [showQRCodeModal, setShowQRCodeModal] = useState(false)
   const [showInfoModal, setShowInfoModal] = useState(false)
   const [qrCodeValue, setQRCodeValue] = useState('')
+  const qrRef = useRef<HTMLDivElement | null>(null);
+
+  const handleDownload = () => {
+    if (qrRef.current) {
+      // Convert canvas to data URL
+      const canvas = qrRef.current.querySelector('canvas');
+      if (canvas) {
+        const imageUrl = canvas.toDataURL('image/png');
+        // Create an <a> element to trigger the download
+        const link = document.createElement('a');
+        link.href = imageUrl;
+        link.download = 'QRCode.png'; // Suggest a filename for the download
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    }
+  };
 
   const handleGenerateQRCode = async () => {
     const id = uuidv4()
@@ -66,9 +84,16 @@ function Home({ }: Props) {
               <DialogTitle as="h3" className="text-base/7 font-medium text-black">
                 Payment successful
               </DialogTitle>
-              <QRCode value={qrCodeValue} />
+              <div ref={qrRef}>
+                <QRCode value={qrCodeValue} />
+              </div>
               <div className="mt-4">
-                <button className="px-4 py-2 bg-green-500 text-white rounded-md mr-4">Download</button>
+                <button
+                  onClick={handleDownload}
+                  className="px-4 py-2 bg-green-500 text-white rounded-md mr-4"
+                >
+                  Download
+                </button>
                 <button className="px-4 py-2 bg-yellow-500 text-white rounded-md">Share</button>
               </div>
               <div className="mt-4">
