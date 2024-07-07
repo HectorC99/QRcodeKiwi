@@ -1,0 +1,29 @@
+version: '3'
+services:
+  app:
+    build: ./app
+    environment:
+      - NODE_ENV=production
+    restart: on-failure
+    volumes:
+      - app-build:/app/build
+    user: "root"
+
+  webservices:
+    build: ./webservices
+    environment:
+      - NODE_ENV=production
+    restart: always
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "804:804"
+      - "4434:4434"
+    restart: always
+    volumes:
+      - app-build:/usr/share/nginx/app
+    depends_on:
+      - app
+volumes:
+  app-build:
