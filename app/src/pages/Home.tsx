@@ -18,7 +18,7 @@ function Home({ }: Props) {
   const handleGenerateQRCode = async () => {
     const id = uuidv4()
     try {
-      const data = await axios.post('http://localhost:5000/api/messages', { id, name, message })
+      const data = await axios.post('http://localhost:4000/api/messages', { id, name, message })
       console.log('Data:', data)
       setQRCodeValue(`https://qrcode.kiwi/${id}`)
       setShowQRCodeModal(true)

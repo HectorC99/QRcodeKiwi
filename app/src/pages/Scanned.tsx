@@ -10,7 +10,7 @@ function Scanned() {
 
   const fetchMessage = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:5000/api/messages/${id}`)
+      const { data } = await axios.get(`http://localhost:4000/api/messages/${id}`)
       setMessage(data.message)
       setName(data.name)
     } catch (error) {
