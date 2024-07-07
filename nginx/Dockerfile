@@ -10,5 +10,3 @@ RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY cloudflare.crt /etc/nginx/ssl/cloudflare.crt
-COPY cloudflare.key /etc/nginx/ssl/cloudflare.key
