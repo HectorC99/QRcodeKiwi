@@ -20,7 +20,7 @@ function Home({ }: Props) {
     try {
       const data = await axios.post('https://api.qrcode.kiwi/api/messages', { id, name, message })
       console.log('Data:', data)
-      setQRCodeValue(`https://qrcode.kiwi/${id}`)
+      setQRCodeValue(`https://qrcode.kiwi/id/${id}`)
       setShowQRCodeModal(true)
     } catch (error) {
       console.error('Error generating QR Code:', error)
