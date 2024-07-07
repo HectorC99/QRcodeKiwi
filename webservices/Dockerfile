@@ -13,8 +13,8 @@ RUN npm i
 # Copy the rest of the application code
 COPY . .
 
-# Build TypeScript files
-RUN npm run build
+# Start server
+RUN npm run start
 
 # Expose port 4000 to the outside world
 EXPOSE 4000
