@@ -23,7 +23,7 @@ async function connectToDatabase(): Promise<void> {
 }
 
 const corsOptions = {
-  origin: 'https://qrcode.kiwi',
+  origin: '*',
   optionsSuccessStatus: 200
 };
 
