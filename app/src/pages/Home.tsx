@@ -49,7 +49,7 @@ function Home({ }: Props) {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-100 pt-20">
+    <div className="flex flex-col items-center min-h-dvh bg-gray-100 pt-20">
       <Logo />
       <div className="flex flex-col mt-10 w-96">
         <input
@@ -81,9 +81,6 @@ function Home({ }: Props) {
               transition
               className="w-full max-w-md rounded-xl bg-white/80 border p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
             >
-              <DialogTitle as="h3" className="text-base/7 font-medium text-black">
-                Payment successful
-              </DialogTitle>
               <div ref={qrRef}>
                 <QRCode value={qrCodeValue} />
               </div>
@@ -134,6 +131,10 @@ function Home({ }: Props) {
           </div>
         </div>
       </Modal>
+      <p className="fixed mb-6 bottom-0 w-full text-center text-slate-500">
+        This was developed for fun by{' '}
+        <a className="underline text-green-600" href="https://www.linkedin.com/in/hector-campbell-9b671b145" target="_blank">Hector Campbell</a>
+      </p>
     </div>
   );
 }
