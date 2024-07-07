@@ -19,7 +19,6 @@ function Home({ }: Props) {
     const id = uuidv4()
     try {
       const data = await axios.post('https://api.qrcode.kiwi/api/messages', { id, name, message })
-      console.log('Data:', data)
       setQRCodeValue(`https://qrcode.kiwi/id/${id}`)
       setShowQRCodeModal(true)
     } catch (error) {
