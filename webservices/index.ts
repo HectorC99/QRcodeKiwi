@@ -22,9 +22,14 @@ async function connectToDatabase(): Promise<void> {
   }
 }
 
+const corsOptions = {
+  origin: 'https://qrcode.kiwi',
+  optionsSuccessStatus: 200
+};
+
 connectToDatabase();
 const app = express();
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const messageSchema = new mongoose.Schema<IMessage>({
