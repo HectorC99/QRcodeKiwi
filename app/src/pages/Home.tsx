@@ -118,7 +118,7 @@ function Home({ }: Props) {
                 Display a message with a QR Code
               </DialogTitle>
               <p className="mt-2 text-sm/6 text-black/50">
-                Put in your name and a message, and we'll generate a QR Code for you to share with others. When your scan the QR Code, they'll see your message displayed on this web page.
+                Put in your name and a message, and we'll generate a QR Code for you to share with others. When someone scans the QR Code, they'll see your message displayed on this web page.
               </p>
               <div className="mt-4">
                 <Button
