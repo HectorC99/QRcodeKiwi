@@ -10,6 +10,7 @@ interface IMessage {
   id: string;
   name: string;
   message: string;
+  date: Date;
 }
 
 async function connectToDatabase(): Promise<void> {
@@ -36,6 +37,7 @@ const messageSchema = new mongoose.Schema<IMessage>({
   id: { type: String, required: true, unique: true },
   name: String,
   message: String,
+  date: { type: Date, default: Date.now }
 });
 
 const Message = mongoose.model<IMessage>('Message', messageSchema);
@@ -43,7 +45,7 @@ const Message = mongoose.model<IMessage>('Message', messageSchema);
 app.post('/api/messages', async (req: Request, res: Response) => {
   const { id, name, message } = req.body;
   try {
-    const newMessage = new Message({ id, name, message });
+    const newMessage = new Message({ id, name, message, date: new Date() });
     await newMessage.save();
     res.status(201).send(newMessage);
   } catch (error) {
