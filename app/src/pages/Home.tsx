@@ -33,7 +33,8 @@ function Home({ }: Props) {
     }
   };
 
-  const handleGenerateQRCode = async () => {
+  const handleGenerateQRCode = async (e: React.FormEvent) => {
+    e.preventDefault()
     const id = uuidv4()
     try {
       const data = await axios.post('https://api.qrcode.kiwi/api/messages', { id, name, message })
