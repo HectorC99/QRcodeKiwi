@@ -51,29 +51,31 @@ function Home({ }: Props) {
   return (
     <div className="flex flex-col items-center min-h-dvh bg-gray-100 pt-10 lg:pt-20">
       <Logo />
-      <div className="flex flex-col mt-10 w-96">
+      <form onSubmit={handleGenerateQRCode} className="flex flex-col mt-10 w-96">
         <input
           type="text"
           placeholder="Your name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           className="w-full mr-2 px-4 py-2 border rounded-full"
+          required
         />
         <textarea
           placeholder="Write your message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           className="w-full h-32 mt-4 px-4 py-2 border rounded-2xl resize-none"
+          required
         />
         <div className="flex mt-6 flex-wrap">
-          <button onClick={handleGenerateQRCode} className="grow px-4 py-2 bg-[#508d0d] text-white rounded-full mr-4">
+          <button className="grow px-4 py-2 bg-[#508d0d] text-white rounded-full mr-4">
             Generate QR Code
           </button>
-          <button onClick={handleInfoClick} className="grow px-4 py-2 bg-gray-500 text-white rounded-full">
+          <button type="button" onClick={handleInfoClick} className="grow px-4 py-2 bg-gray-500 text-white rounded-full">
             How does it work?
           </button>
         </div>
-      </div>
+      </form>
       <Modal isOpen={showQRCodeModal} setIsOpen={setShowQRCodeModal}>
         <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
           <div className="flex min-h-full items-center justify-center p-4">
