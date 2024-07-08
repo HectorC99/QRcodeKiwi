@@ -53,7 +53,7 @@ function Home({ }: Props) {
 
   return (
     <div className="flex flex-col items-center min-h-dvh bg-gray-100 pt-10 lg:pt-20">
-      <Logo {...(qrCodeValue ? { qrcode: qrCodeValue } : {})} />
+      <Logo {...{ qrRef, ...(qrCodeValue ? { qrcode: qrCodeValue } : {}) }} />
       <div className={`flex flex-col items-center mt-10 w-96 opacity-0 ${showFinalForm ? 'animate-fadein' : 'hidden'}`}>
         <h1>Scan me! ^</h1>
         <div className="flex flex-wrap mt-6 gap-2">
