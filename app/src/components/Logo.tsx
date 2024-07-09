@@ -10,7 +10,7 @@ type Props = {
 function Logo({ qrRef, qrcode }: Props) {
   return (
     <div className={`kiwi-container ${qrcode && 'animate'}`}>
-      <img className="kiwi w-64 lg:w-80" src={logoImage} alt="" />
+      <img className="kiwi" src={logoImage} alt="" />
       {qrcode && (
         <>
           <div ref={qrRef} className="qr-code-container">

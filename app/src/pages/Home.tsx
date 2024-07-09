@@ -121,7 +121,7 @@ function Home({ }: Props) {
           </div>
         </div>
       </Modal>
-      <p className="fixed mb-6 bottom-0 w-full text-center text-slate-500">
+      <p className="fixed mb-6 bottom-0 w-full text-center text-slate-500 hidden lg:block">
         Developed for fun by{' '}
         <a className="underline text-green-600" href="https://www.linkedin.com/in/hector-campbell-9b671b145" target="_blank">Hector Campbell</a>
       </p>
