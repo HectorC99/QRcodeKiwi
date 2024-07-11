@@ -122,8 +122,8 @@ function Home({ }: Props) {
         </div>
       </Modal>
       <p className="fixed mb-6 bottom-0 w-full text-center text-slate-500 hidden lg:block">
-        Developed for fun by{' '}
-        <a className="underline text-green-600" href="https://www.linkedin.com/in/hector-campbell-9b671b145" target="_blank">Hector Campbell</a>
+        Developed for fun for{' '}
+        <a className="underline text-green-600" href="https://buildspace.so/" target="_blank">Buildspace</a>
       </p>
     </div>
   );
