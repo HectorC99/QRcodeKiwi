@@ -25,6 +25,7 @@ function Scanned() {
   return (
     <div className="flex flex-col items-center min-h-screen bg-gray-100 pt-20">
       <Logo />
+      
       <div className="flex flex-col mt-10 w-96">
         <p className="w-full mr-2 px-4 py-2 border rounded-full bg-white">{name}</p>
         <p className="w-full mr-2 px-4 py-2 border rounded-full bg-white">{message}</p>
